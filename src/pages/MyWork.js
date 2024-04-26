@@ -1,9 +1,11 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
 // Images
-import hockeyteamslibrary from '../img/hockey-teams-library.png';
+import peoples from "../img/peoples.png";
 import coderheroes from '../img/coder_heroes.png';
 import mern_stack from '../img/mern_stack.png';
+import hockeyteamslibrary from '../img/hockey-teams-library.png';
+
 // Animations
 import { motion } from 'framer-motion';
 import {
@@ -26,6 +28,35 @@ const MyWork = () => {
             exit="exit"
             style={{ background: '#fff' }}
         >
+            {/* People's Productions */}
+            <StyledMovie>
+                <motion.h2>People's Productions</motion.h2>
+                <StyledP>A website with information about 30+ year live event businesses in the Des Moines, Iowa area.</StyledP>
+                <motion.div variants={lineAnim} className="line"></motion.div>
+                    <Hide>
+                        <motion.img variants={photoAnim} src={peoples} alt="peoples image"/>
+                    </Hide>
+                <div className="button-container">
+                    {/* <motion.button variants={fade}>
+                        <a 
+                            href="https://mern-stack-nforman91.vercel.app/" 
+                            className="visit-button" 
+                            target="_blank" 
+                            rel="noreferrer"
+                        >Visit Project</a>
+                    </motion.button> */}
+                    <motion.button variants={fade}>
+                        <a 
+                            href="https://github.com/nforman91/peoples" 
+                            className="github-button" 
+                            target="_blank" 
+                            rel="noreferrer"
+                        >GitHub</a>
+                    </motion.button>
+                </div>
+            </StyledMovie>
+
+            {/* MERN Stack Blog */}
             <StyledMovie>
                 <motion.h2>MERN Stack Blog</motion.h2>
                 <StyledP>An application to access blog posts and visit individual pages.</StyledP>
@@ -52,37 +83,8 @@ const MyWork = () => {
                     </motion.button>
                 </div>
             </StyledMovie>
-            <StyledMovie
-                ref={element2} 
-                variants={fade}
-                animate={controls2}
-                initial='hidden'
-            >
-                <motion.h2>Hockey Teams Library</motion.h2>
-                <StyledP>An application for displaying basic information about NHL teams. Combines third-party API data for displaying team information in modals, and local state for displaying logos/sorting functionality.</StyledP>
-                <motion.div variants={lineAnim} className="line"></motion.div>
-                    <Hide>
-                        <motion.img variants={photoAnim} src={hockeyteamslibrary} alt="hockey teams library image"/>
-                    </Hide>
-                <div className="button-container">
-                    <motion.button variants={fade}>
-                        <a 
-                            href="https://hockey-team-library.vercel.app/" 
-                            className="visit-button" 
-                            target="_blank" 
-                            rel="noreferrer"
-                        >Visit Project</a>
-                    </motion.button>
-                    <motion.button variants={fade}>
-                        <a 
-                            href="https://github.com/nforman91/image-library/tree/main/image-library" 
-                            className="github-button" 
-                            target="_blank" 
-                            rel="noreferrer"
-                        >GitHub</a>
-                    </motion.button>
-                </div>
-            </StyledMovie>
+
+            {/* CoderHeroes */}
             <StyledMovie
                 ref={element} 
                 variants={fade}
@@ -114,6 +116,40 @@ const MyWork = () => {
                     </motion.button>
                 </div>
             </StyledMovie>
+
+            {/* Hockey Teams Library */}
+            <StyledMovie
+                ref={element2} 
+                variants={fade}
+                animate={controls2}
+                initial='hidden'
+            >
+                <motion.h2>Hockey Teams Library</motion.h2>
+                <StyledP>An application for displaying basic information about NHL teams. Combines third-party API data for displaying team information in modals, and local state for displaying logos/sorting functionality.</StyledP>
+                <motion.div variants={lineAnim} className="line"></motion.div>
+                    <Hide>
+                        <motion.img variants={photoAnim} src={hockeyteamslibrary} alt="hockey teams library image"/>
+                    </Hide>
+                <div className="button-container">
+                    <motion.button variants={fade}>
+                        <a 
+                            href="https://hockey-team-library.vercel.app/" 
+                            className="visit-button" 
+                            target="_blank" 
+                            rel="noreferrer"
+                        >Visit Project</a>
+                    </motion.button>
+                    <motion.button variants={fade}>
+                        <a 
+                            href="https://github.com/nforman91/image-library/tree/main/image-library" 
+                            className="github-button" 
+                            target="_blank" 
+                            rel="noreferrer"
+                        >GitHub</a>
+                    </motion.button>
+                </div>
+            </StyledMovie>
+            
             <ScrollTop/>
         </StyledWork>
     );
