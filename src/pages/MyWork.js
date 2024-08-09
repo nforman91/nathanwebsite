@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
 // Images
+import graphics from "../img/graphics.png";
 import peoples from "../img/peoples.png";
 import coderheroes from '../img/coder_heroes.png';
 import mern_stack from '../img/mern_stack.png';
@@ -28,6 +29,34 @@ const MyWork = () => {
             exit="exit"
             style={{ background: '#fff' }}
         >
+            {/* Graphics Records */}
+            <StyledMovie>
+                <motion.h2>Graphics Records</motion.h2>
+                <StyledP>A home page for a fictional record store that I work on for professional development and practice.</StyledP>
+                <motion.div variants={lineAnim} className="line"></motion.div>
+                    <Hide>
+                        <motion.img variants={photoAnim} src={graphics} alt="graphics image"/>
+                    </Hide>
+                <div className="button-container">
+                    <motion.button variants={fade}>
+                        <a 
+                            href="https://graphicsrecords.vercel.app/" 
+                            className="visit-button" 
+                            target="_blank" 
+                            rel="noreferrer"
+                        >Visit Project</a>
+                    </motion.button>
+                    <motion.button variants={fade}>
+                        <a 
+                            href="https://github.com/nforman91/graphicsrecords" 
+                            className="github-button" 
+                            target="_blank" 
+                            rel="noreferrer"
+                        >GitHub</a>
+                    </motion.button>
+                </div>
+            </StyledMovie>
+
             {/* People's Productions */}
             <StyledMovie>
                 <motion.h2>People's Productions</motion.h2>
